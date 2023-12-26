@@ -3,6 +3,9 @@
 
 #include <QDialog>
 #include "registration.h"
+#include "paymentpage.h"
+#include "availability.h"
+#include "booktheroom.h"
 
 namespace Ui {
     class HomePage;
@@ -19,9 +22,18 @@ public:
 private slots:
     void on_pushButton_RegisterClient_clicked();
 
+    void on_pushButton_CheckOut_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_pushButton_BookRoom_clicked();
+
 private:
     Ui::HomePage *ui;
     Registration *registeration;
+    PaymentPage *paymentpage;
+    Availability *available;
+    BookTheRoom *booking;
 };
 
 #endif // HOMEPAGE_H

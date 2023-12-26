@@ -1,6 +1,6 @@
 #include "Reservation.h"
 
-Reservation::Reservation(const std::string& title, const std::string& type, const Date& date, const Room& room, const std::vector<Service>& services)
+Reservation::Reservation(const std::string& title, const std::string& type, const QDate& date, const Room& room, const std::vector<Service>& services)
     : _title(title), _type(type), _date(date), _room(room), _services(services)
 {
 }
@@ -15,7 +15,7 @@ const std::string& Reservation::getType() const
     return _type;
 }
 
-const Date& Reservation::getDate() const
+const QDate& Reservation::getDate() const
 {
     return _date;
 }
@@ -40,7 +40,7 @@ void Reservation::setType(const std::string& type)
     _type = type;
 }
 
-void Reservation::setDate(const Date& date)
+void Reservation::setDate(const QDate& date)
 {
     _date = date;
 }
@@ -56,6 +56,7 @@ void Reservation::addService(const Service& service)
 }
 
 void Reservation::removeService(const Service& service)
-{
+{/*
     _services.erase(std::remove(_services.begin(), _services.end(), service), _services.end());
+*/
 }

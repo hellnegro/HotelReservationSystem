@@ -18,6 +18,9 @@ HomePage::~HomePage()
 {
     delete ui;
     delete registeration;
+    delete paymentpage;
+    delete available;
+    delete booking;
 }
 
 void HomePage::on_pushButton_RegisterClient_clicked()
@@ -25,3 +28,24 @@ void HomePage::on_pushButton_RegisterClient_clicked()
     registeration = new Registration(this);
     registeration->show();
 }
+
+void HomePage::on_pushButton_CheckOut_clicked()
+{
+    paymentpage = new PaymentPage(this);
+    paymentpage->show();
+}
+
+
+void HomePage::on_pushButton_clicked()
+{
+    available = new Availability(this);
+    available->show();
+}
+
+
+void HomePage::on_pushButton_BookRoom_clicked()
+{
+    booking = new BookTheRoom(this);
+    booking->show();
+}
+

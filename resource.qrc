@@ -3,5 +3,9 @@
         <file>icon/password.png</file>
         <file>image/room.png</file>
         <file>database/hotel.db</file>
+        <file>icon/female.png</file>
+        <file>icon/male.png</file>
+        <file>icon/customer.png</file>
+        <file>icon/employee.png</file>
     </qresource>
 </RCC>

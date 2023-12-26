@@ -13,9 +13,12 @@ SOURCES += \
     Human.cpp \
     Payment.cpp \
     Reservation.cpp \
+    availability.cpp \
+    booktheroom.cpp \
     homepage.cpp \
     loginpage.cpp \
     main.cpp \
+    paymentpage.cpp \
     registration.cpp \
     service.cpp
 
@@ -24,14 +27,20 @@ HEADERS += \
     Human.h \
     Payment.h \
     RESERVATION_H.h \
+    availability.h \
+    booktheroom.h \
     homepage.h \
     loginpage.h \
+    paymentpage.h \
     registration.h \
     service.h
 
 FORMS += \
+    availability.ui \
+    booktheroom.ui \
     homepage.ui \
     loginpage.ui \
+    paymentpage.ui \
     registration.ui
 
 # Default rules for deployment.

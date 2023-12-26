@@ -7,6 +7,10 @@ Registration::Registration(QDialog *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(380,380);
+    ui->comboBox_gender->addItem(QIcon(":/resource/icon/female.png"),"FEMALE");
+    ui->comboBox_gender->addItem(QIcon(":/resource/icon/male.png"),"MALE");
+    ui->comboBox_status->addItem(QIcon(":/resource/icon/customer.png"),"CUSTOMER");
+    ui->comboBox_status->addItem(QIcon(":/resource/icon/employee.png"),"EMPLOYEE");
 }
 
 Registration::~Registration()
