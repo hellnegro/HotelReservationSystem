@@ -26,7 +26,7 @@ HEADERS += \
     Customer.h \
     Human.h \
     Payment.h \
-    RESERVATION_H.h \
+    Reservation.h \
     availability.h \
     booktheroom.h \
     homepage.h \
