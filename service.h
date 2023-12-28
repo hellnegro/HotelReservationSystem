@@ -1,6 +1,7 @@
 #ifndef SERVICE_H
 #define SERVICE_H
 #include <QDate>
+#include <QDebug>
 
 class Service
 {

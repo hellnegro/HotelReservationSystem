@@ -1,6 +1,8 @@
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 
+#include <QDebug>
+
 #include "Human.h"
 
 class Customer : public Human

@@ -1,6 +1,8 @@
 #ifndef PAYMENT_H
 #define PAYMENT_H
+
 #include <QDate>
+#include <QDebug>
 
 class Payment
 {

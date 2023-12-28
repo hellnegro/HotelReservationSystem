@@ -15,12 +15,16 @@ SOURCES += \
     Reservation.cpp \
     availability.cpp \
     booktheroom.cpp \
+    employee.cpp \
     homepage.cpp \
+    hotel.cpp \
+    room.cpp \
     loginpage.cpp \
     main.cpp \
     paymentpage.cpp \
     registration.cpp \
-    service.cpp
+    service.cpp \
+    system.cpp
 
 HEADERS += \
     Customer.h \
@@ -29,11 +33,15 @@ HEADERS += \
     Reservation.h \
     availability.h \
     booktheroom.h \
+    employee.h \
     homepage.h \
+    hotel.h \
+    room.h \
     loginpage.h \
     paymentpage.h \
     registration.h \
-    service.h
+    service.h \
+    system.h
 
 FORMS += \
     availability.ui \

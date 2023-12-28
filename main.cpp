@@ -1,6 +1,8 @@
 #include "loginpage.h"
+#include "hotel.h"
 
 #include <QApplication>
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {

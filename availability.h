@@ -2,6 +2,7 @@
 #define AVAILABILITY_H
 
 #include <QDialog>
+#include <QDebug>
 
 namespace Ui {
 class Availability;

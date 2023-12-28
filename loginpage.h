@@ -2,6 +2,8 @@
 #define LOGINPAGE_H
 
 #include <QMainWindow>
+#include <QDebug>
+
 #include "HomePage.h"
 
 QT_BEGIN_NAMESPACE

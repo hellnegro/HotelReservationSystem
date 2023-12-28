@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <QDate>
+#include <QDebug>
 #include "Room.h"
 #include "Service.h"
 

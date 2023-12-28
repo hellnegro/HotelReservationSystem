@@ -2,6 +2,7 @@
 #define REGISTRATION_H
 
 #include <QDialog>
+#include <QDebug>
 
 namespace Ui {
 class Registration;

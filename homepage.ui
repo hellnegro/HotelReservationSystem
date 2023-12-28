@@ -49,7 +49,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Customer Registration</string>
+    <string>Registration</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_BookRoom">

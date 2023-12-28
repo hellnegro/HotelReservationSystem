@@ -2,6 +2,8 @@
 #define HOMEPAGE_H
 
 #include <QDialog>
+#include <QDebug>
+
 #include "registration.h"
 #include "paymentpage.h"
 #include "availability.h"
