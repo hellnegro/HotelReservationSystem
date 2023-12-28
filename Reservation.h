@@ -2,36 +2,27 @@
 #define RESERVATION_H
 
 #include <string>
-#include <vector>
 #include <QDate>
-#include <QDebug>
+#include "Customer.h"
 #include "Room.h"
-#include "Service.h"
 
 class Reservation
 {
 public:
-    Reservation(const std::string& title, const std::string& type, const QDate& date, const Room& room, const std::vector<Service>& services);
-
-    const std::string& getTitle() const;
-    const std::string& getType() const;
-    const QDate& getDate() const;
-    const Room& getRoom() const;
-    const std::vector<Service>& getServices() const;
-
-    void setTitle(const std::string& title);
-    void setType(const std::string& type);
-    void setDate(const QDate& date);
-    void setRoom(const Room& room);
-    void addService(const Service& service);
-    void removeService(const Service& service);
+    Reservation(QList<Customer>, Room&);
+    Reservation();
+    QList<Customer> getCustomer();
+    Room getRoom();
+    QDate getDate();
+    void addCustomers(Customer);
+    void removeCustomers(Customer);
+    void addRoom(Room);
+    void setRoom(Room);
 
 private:
-    std::string _title;
-    std::string _type;
-    QDate _date;
-    Room _room;
-    std::vector<Service> _services;
+    QList<Customer> customers;
+    Room room;
+    QDate date;
 };
 
 #endif // RESERVATION_H

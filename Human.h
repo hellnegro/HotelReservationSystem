@@ -2,13 +2,11 @@
 #define HUMAN_H
 
 #include <QString>
-#include <QDebug>
 
 enum Gender { MALE, FEMALE };
 
 class Human
 {
-
 private:
 
     QString firstName;
@@ -18,11 +16,12 @@ private:
 
 public:
     Human(QString firstName, QString lastName, short age, Gender gender);
+    Human();
     QString getName() const;
     QString getSurname() const;
     QString getFullName() const;
     short getAge() const;
-    Gender getGender() const;
+    QString getGendertoString() const;
 
 };
 

@@ -16,9 +16,9 @@ public:
     void closeAccount();
 
 private:
-    Reservation reservation;
-    Service service;
-    Payment payment;
+    QList<Reservation> reservations;
+    QList<Service> services;
+    QList<Payment> payments;
 
 };
 

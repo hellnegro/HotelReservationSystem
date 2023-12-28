@@ -2,7 +2,16 @@
 
 Room::Room()
 {
+    title = "SELECT ROOM";
+    type = "ROOM TYPE";
+    price = 0.0;
+}
 
+Room::Room(QString title, QString type, float price)
+{
+    this->title = title;
+    this->type = type;
+    this->price = price;
 }
 
 QString Room::getTitle()
@@ -25,9 +34,3 @@ void Room::setPrice(float price)
     this->price = price;
 }
 
-bool Room::clean()
-{
-    if(isEmpty)
-        isClean = true;
-    return isClean;
-}

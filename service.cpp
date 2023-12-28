@@ -1,31 +1,32 @@
 #include "service.h"
 
-Service::Service(float cost, QString type, int amount)
+Service::Service(int amount, QString type, float cost)
 {
-    this->cost = cost;
-    this->type = type;
     this->amount = amount;
+    this->type = type;
+    this->cost = cost;
 }
-float Service::getCost()
+
+Service::Service()
 {
-    return cost;
+    amount = 0;
+    type = "DINNER";
+    cost = 250.00;
 }
-QString Service::getType()
-{
-    return type;
-}
+
 int Service::getAmount()
 {
     return amount;
 }
-void Service::setCost(float cost)
+
+QString Service::getType()
 {
-    this->cost = cost;
+    return type;
 }
 
-void Service::setType(QString type)
+float Service::getCost()
 {
-    this->type = type;
+    return cost;
 }
 
 void Service::setAmount(int amount)
@@ -33,3 +34,12 @@ void Service::setAmount(int amount)
     this->amount = amount;
 }
 
+void Service::setType(QString type)
+{
+    this->type = type;
+}
+
+void Service::setCost(float cost)
+{
+    this->cost = cost;
+}

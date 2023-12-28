@@ -1,62 +1,46 @@
 #include "Reservation.h"
 
-Reservation::Reservation(const std::string& title, const std::string& type, const QDate& date, const Room& room, const std::vector<Service>& services)
-    : _title(title), _type(type), _date(date), _room(room), _services(services)
+Reservation::Reservation(QList<Customer> customers, Room& room)
 {
+    this->customers = customers;
+    this->room = room;
+    this->date = QDate::currentDate();
 }
 
-const std::string& Reservation::getTitle() const
+Reservation::Reservation()
 {
-    return _title;
+    Customer customer = Customer();
+    customers.append(customer);
+    date = QDate::currentDate();
 }
 
-const std::string& Reservation::getType() const
+QList<Customer> Reservation::getCustomer()
 {
-    return _type;
+    return customers;
 }
 
-const QDate& Reservation::getDate() const
+Room Reservation::getRoom()
 {
-    return _date;
+    return room;
 }
 
-const Room& Reservation::getRoom() const
+QDate Reservation::getDate()
 {
-    return _room;
+    return date;
 }
 
-const std::vector<Service>& Reservation::getServices() const
+void Reservation::addCustomers(Customer customer)
 {
-    return _services;
+    customers.append(customer);
 }
 
-void Reservation::setTitle(const std::string& title)
+void Reservation::removeCustomers(Customer customer)
 {
-    _title = title;
+    QList<Customer>::iterator iter = customers.begin();
+    while(iter != customers.end()){
+        if((*iter).getCustomerNo() == customer.getCustomerNo())
+            customers.erase(iter);
+        iter++;
+    }
 }
 
-void Reservation::setType(const std::string& type)
-{
-    _type = type;
-}
-
-void Reservation::setDate(const QDate& date)
-{
-    _date = date;
-}
-
-void Reservation::setRoom(const Room& room)
-{
-    _room = room;
-}
-
-void Reservation::addService(const Service& service)
-{
-    _services.push_back(service);
-}
-
-void Reservation::removeService(const Service& service)
-{/*
-    _services.erase(std::remove(_services.begin(), _services.end(), service), _services.end());
-*/
-}

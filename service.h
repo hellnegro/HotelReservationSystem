@@ -1,23 +1,22 @@
 #ifndef SERVICE_H
 #define SERVICE_H
 #include <QDate>
-#include <QDebug>
 
 class Service
 {
 private:
-    float cost;
-    QString type;
     int amount;
+    QString type;
+    float cost;
 public:
-    Service(float, QString,int);
+    Service(int, QString, float);
+    Service();
+    int getAmount();
     float getCost();
     QString getType();
-    int getAmount();
-    void setCost(float);
     void setType(QString);
     void setAmount(int);
-
+    void setCost(float);
 };
 #endif // SERVICE_H
 

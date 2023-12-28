@@ -1,28 +1,25 @@
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 
-#include <QDebug>
-
 #include "Human.h"
 
 class Customer : public Human
 {
-
 private:
-
+    int customerNo;
     QString phoneNumber;
     QString email;
 
 public:
 
-    Customer(QString firstName, QString lastName, short age, Gender gender, QString phoneNumber, QString email);
-
+    Customer(int, QString, QString, short, Gender, QString, QString);
+    Customer(int, Human&, QString, QString);
+    Customer();
+    int getCustomerNo() const;
     QString getPhoneNumber() const;
     QString getEmail() const;
-
-    void setPhoneNumber(QString phoneNumber);
-    void setEmail(QString email);
-
+    void setPhoneNumber(QString);
+    void setEmail(QString);
 };
 
 #endif // CUSTOMER_H

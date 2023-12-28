@@ -1,12 +1,20 @@
 #include "employee.h"
-/*
-Employee::Employee(QString firstName, QString lastName, short age, Gender gender, QString position)
-    : firstName(firstName), lastName(lastName), age(age), gender(gender), position(position)
+
+Employee::Employee(int employeeNo, QString firstName, QString lastName, short age, Gender gender, QString position)
+    : Human(firstName, lastName, age, gender)
 {
+    this->employeeNo = employeeNo;
+    this->position = position;
 }
 
-Employee::Employee(Human& human,QString position):Human(human),position(position)
+Employee::Employee(int employeeNo, Human& human,QString position):Human(human)
 {
+    this->employeeNo = employeeNo;
+    this->position = position;
+}
+int Employee::getEmployeeNo()
+{
+    return employeeNo;
 }
 
 QString Employee::getPosition()
@@ -21,6 +29,6 @@ void Employee::setPosition(QString position)
 
 QString Employee::getInfo()
 {
-    return Employee::getFullName()+"\n"+Employee::getPosition();
+    return "No"+ QString::number(employeeNo) + " " + Employee::getFullName()+ '\n' + Employee::getPosition();
 }
-*/
+

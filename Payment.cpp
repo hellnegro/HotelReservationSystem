@@ -4,7 +4,14 @@ Payment::Payment(float debt, QString method)
 {
     this->debt = debt;
     this->method = method;
-    date = QDate::currentDate();
+    date = QDate::currentDate().toString("dd.MM.yyyy");
+}
+
+Payment::Payment()
+{
+    debt = 0.0;
+    method = "CASH";
+    date = QDate::currentDate().toString("dd.MM.yyyy");
 }
 
 float Payment::getDebt()
@@ -19,6 +26,6 @@ QString Payment::getMethod()
 
 QString Payment::getDate()
 {
-    return date.toString();
+    return date;
 }
 

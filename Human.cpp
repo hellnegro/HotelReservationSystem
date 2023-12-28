@@ -5,6 +5,14 @@ Human::Human(QString firstName, QString lastName, short age, Gender gender)
 {
 }
 
+Human::Human()
+{
+    firstName = "TYPE NAME";
+    lastName = "TYPE SURNAME";
+    age = 0;
+    gender = Gender::MALE;
+}
+
 QString Human::getName() const
 {
     return firstName;
@@ -25,7 +33,7 @@ short Human::getAge() const
     return age;
 }
 
-Gender Human::getGender() const
+QString Human::getGendertoString() const
 {
-    return gender;
+    return gender == Gender::MALE ? "MALE" : "FEMALE" ;
 }

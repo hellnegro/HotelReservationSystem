@@ -1,7 +1,6 @@
 #ifndef HOTEL_H
 #define HOTEL_H
 
-#include <QDebug>
 #include "employee.h"
 #include "service.h"
 #include "room.h"
@@ -13,15 +12,11 @@ public:
     void hireEmployee(Employee);
     void newService(Service);
     void deleteService(Service);
-    static Hotel* getInstance();
 
 private:
-    Hotel(){};
-    Hotel(Hotel const &){};
-    static Hotel *instance;
-    Employee *employee;
-    Service *service;
-    Room *room;
+    QList<Employee> employees;
+    QList<Service> services;
+    QList<Room> rooms;
 };
 
 #endif // HOTEL_H

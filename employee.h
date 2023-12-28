@@ -8,11 +8,13 @@
 class Employee : public Human
 {
 private:
+    int employeeNo;
     QString position;
 
 public:
-    Employee(QString, QString, short, Gender, QString);
-    Employee(Human&, QString);
+    Employee(int,QString, QString, short, Gender, QString);
+    Employee(int,Human&, QString);
+    int getEmployeeNo();
     QString getPosition();
     void setPosition(QString);
     QString getInfo();

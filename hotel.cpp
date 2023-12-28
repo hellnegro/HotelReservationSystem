@@ -1,31 +1,32 @@
 #include "hotel.h"
 
-Hotel* Hotel::instance = nullptr;
-
-void newEmployee(Employee)
+void Hotel::newEmployee(Employee employee)
 {
-
+    employees.append(employee);
 }
 
-void hireEmployee(Employee)
+void Hotel::hireEmployee(Employee employee)
 {
-
+    QList<Employee>::iterator iter = employees.begin();
+    while(iter != employees.end()){
+        if((*iter).getEmployeeNo() == employee.getEmployeeNo())
+            employees.erase(iter);
+        iter++;
+    }
 }
 
-void newService(Service)
+void  Hotel::newService(Service service)
 {
-
+    services.append(service);
 }
 
-void deleteService(Service)
+void  Hotel::deleteService(Service service)
 {
-
+    QList<Service>::iterator iter = services.begin();
+    while(iter != services.end()){
+        if((*iter).getType() == service.getType())
+            services.erase(iter);
+        iter++;
+    }
 }
 
-Hotel *Hotel::getInstance()
-{
-    qDebug()<<"Hotel class is created!";
-    if(instance == nullptr)
-        instance = new Hotel();
-    return instance;
-}
