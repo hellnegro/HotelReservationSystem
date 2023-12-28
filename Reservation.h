@@ -10,7 +10,6 @@ class Reservation
 {
 public:
     Reservation(QList<Customer>, Room&);
-    Reservation();
     QList<Customer> getCustomer();
     Room getRoom();
     QDate getDate();

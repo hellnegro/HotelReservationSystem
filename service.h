@@ -10,7 +10,6 @@ private:
     float cost;
 public:
     Service(int, QString, float);
-    Service();
     int getAmount();
     float getCost();
     QString getType();

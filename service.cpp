@@ -7,13 +7,6 @@ Service::Service(int amount, QString type, float cost)
     this->cost = cost;
 }
 
-Service::Service()
-{
-    amount = 0;
-    type = "DINNER";
-    cost = 250.00;
-}
-
 int Service::getAmount()
 {
     return amount;

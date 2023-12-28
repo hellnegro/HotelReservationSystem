@@ -1,6 +1,6 @@
 #include "employee.h"
 
-Employee::Employee(int employeeNo, QString firstName, QString lastName, short age, Gender gender, QString position)
+Employee::Employee(int employeeNo, QString firstName, QString lastName, short age, QString gender, QString position)
     : Human(firstName, lastName, age, gender)
 {
     this->employeeNo = employeeNo;

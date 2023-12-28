@@ -1,5 +1,14 @@
 #include "hotel.h"
 
+Hotel* Hotel::instance = nullptr;
+
+Hotel *Hotel::getInstance()
+{
+    if(instance == nullptr)
+        instance = new Hotel();
+    return instance;
+}
+
 void Hotel::newEmployee(Employee employee)
 {
     employees.append(employee);

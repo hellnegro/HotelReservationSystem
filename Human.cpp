@@ -1,16 +1,8 @@
 #include "Human.h"
 
-Human::Human(QString firstName, QString lastName, short age, Gender gender)
+Human::Human(QString firstName, QString lastName, short age, QString gender)
     : firstName(firstName), lastName(lastName), age(age), gender(gender)
 {
-}
-
-Human::Human()
-{
-    firstName = "TYPE NAME";
-    lastName = "TYPE SURNAME";
-    age = 0;
-    gender = Gender::MALE;
 }
 
 QString Human::getName() const
@@ -33,7 +25,7 @@ short Human::getAge() const
     return age;
 }
 
-QString Human::getGendertoString() const
+QString Human::getGender() const
 {
-    return gender == Gender::MALE ? "MALE" : "FEMALE" ;
+    return gender;
 }

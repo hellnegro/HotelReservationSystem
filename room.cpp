@@ -34,3 +34,15 @@ void Room::setPrice(float price)
     this->price = price;
 }
 
+/*    Room rooms[] = {{"101","SINGLE",150},
+                    {"102","SINGLE",150},
+                    {"103","SINGLE",150},
+                    {"104","SINGLE",150},
+                    {"105","SINGLE",150},
+                    {"106","SINGLE",150},
+                    {"201","DOUBLE",250},
+                    {"202","DOUBLE",250},
+                    {"203","DOUBLE",250},
+                    {"301","SUIT",450},
+                    {"301","SUIT",450}};
+*/

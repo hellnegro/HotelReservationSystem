@@ -2,7 +2,9 @@
 #define REGISTRATION_H
 
 #include <QDialog>
-#include <QDebug>
+#include "system.h"
+#include "Customer.h"
+#include "employee.h"
 
 namespace Ui {
 class Registration;
@@ -19,9 +21,14 @@ public:
 private slots:
     void on_pushButton_Cancel_clicked();
 
+    void on_comboBox_status_currentIndexChanged(int index);
+
+    void on_pushButton_Submit_clicked();
+
 private:
     Ui::Registration *ui;
-
+    Customer *customer;
+    Employee *employee;
 };
 
 #endif // REGISTRATION_H

@@ -8,12 +8,14 @@
 class Hotel
 {
 public:
+    static Hotel* getInstance();
     void newEmployee(Employee);
     void hireEmployee(Employee);
     void newService(Service);
     void deleteService(Service);
 
 private:
+    static Hotel * instance;
     QList<Employee> employees;
     QList<Service> services;
     QList<Room> rooms;

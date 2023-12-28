@@ -7,12 +7,6 @@ Reservation::Reservation(QList<Customer> customers, Room& room)
     this->date = QDate::currentDate();
 }
 
-Reservation::Reservation()
-{
-    Customer customer = Customer();
-    customers.append(customer);
-    date = QDate::currentDate();
-}
 
 QList<Customer> Reservation::getCustomer()
 {

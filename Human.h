@@ -3,8 +3,6 @@
 
 #include <QString>
 
-enum Gender { MALE, FEMALE };
-
 class Human
 {
 private:
@@ -12,17 +10,15 @@ private:
     QString firstName;
     QString lastName;
     short age;
-    Gender gender;
+    QString gender;
 
 public:
-    Human(QString firstName, QString lastName, short age, Gender gender);
-    Human();
+    Human(QString firstName, QString lastName, short age, QString gender);
     QString getName() const;
     QString getSurname() const;
     QString getFullName() const;
     short getAge() const;
-    QString getGendertoString() const;
-
+    QString getGender() const;
 };
 
 #endif // HUMAN_H

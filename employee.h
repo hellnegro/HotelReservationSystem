@@ -12,7 +12,7 @@ private:
     QString position;
 
 public:
-    Employee(int,QString, QString, short, Gender, QString);
+    Employee(int,QString, QString, short, QString, QString);
     Employee(int,Human&, QString);
     int getEmployeeNo();
     QString getPosition();
