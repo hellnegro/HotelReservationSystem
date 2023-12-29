@@ -6,7 +6,7 @@ HomePage::HomePage(QWidget *parent) :
     ui(new Ui::HomePage)
 {
     ui->setupUi(this);
-    this->setFixedSize(850,450);
+    this->setFixedSize(840,480);
 
     //Path to image file
     QPixmap roomImg(":/resource/image/room.png");
@@ -47,5 +47,19 @@ void HomePage::on_pushButton_BookRoom_clicked()
 {
     booking = new BookTheRoom(this);
     booking->show();
+}
+
+
+void HomePage::on_pushButton_transactions_clicked()
+{
+    transactions = new Transactions(this);
+    transactions->show();
+}
+
+
+void HomePage::on_pushButton_addService_clicked()
+{
+    addservice = new AddService(this);
+    addservice->show();
 }
 

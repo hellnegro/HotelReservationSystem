@@ -13,6 +13,7 @@ SOURCES += \
     Human.cpp \
     Payment.cpp \
     Reservation.cpp \
+    addservice.cpp \
     availability.cpp \
     booktheroom.cpp \
     employee.cpp \
@@ -24,13 +25,15 @@ SOURCES += \
     paymentpage.cpp \
     registration.cpp \
     service.cpp \
-    system.cpp
+    system.cpp \
+    transactions.cpp
 
 HEADERS += \
     Customer.h \
     Human.h \
     Payment.h \
     Reservation.h \
+    addservice.h \
     availability.h \
     booktheroom.h \
     employee.h \
@@ -41,15 +44,18 @@ HEADERS += \
     paymentpage.h \
     registration.h \
     service.h \
-    system.h
+    system.h \
+    transactions.h
 
 FORMS += \
+    addservice.ui \
     availability.ui \
     booktheroom.ui \
     homepage.ui \
     loginpage.ui \
     paymentpage.ui \
-    registration.ui
+    registration.ui \
+    transactions.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>844</width>
-    <height>452</height>
+    <width>840</width>
+    <height>480</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
      <x>310</x>
      <y>30</y>
      <width>511</width>
-     <height>391</height>
+     <height>410</height>
     </rect>
    </property>
    <property name="text">
@@ -38,7 +38,7 @@
      <x>30</x>
      <y>30</y>
      <width>240</width>
-     <height>80</height>
+     <height>60</height>
     </rect>
    </property>
    <property name="font">
@@ -56,9 +56,9 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>130</y>
+     <y>170</y>
      <width>240</width>
-     <height>80</height>
+     <height>60</height>
     </rect>
    </property>
    <property name="font">
@@ -76,9 +76,9 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>230</y>
+     <y>310</y>
      <width>240</width>
-     <height>80</height>
+     <height>60</height>
     </rect>
    </property>
    <property name="font">
@@ -96,9 +96,9 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>330</y>
+     <y>100</y>
      <width>240</width>
-     <height>80</height>
+     <height>60</height>
     </rect>
    </property>
    <property name="font">
@@ -110,6 +110,46 @@
    </property>
    <property name="text">
     <string>Check Availability</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_transactions">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>380</y>
+     <width>240</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>12</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Transactions</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_addService">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>240</y>
+     <width>240</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>12</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Add Service</string>
    </property>
   </widget>
  </widget>

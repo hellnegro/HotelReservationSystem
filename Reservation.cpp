@@ -3,7 +3,7 @@
 Reservation::Reservation(QList<Customer> customers, Room& room)
 {
     this->customers = customers;
-    this->room = room;
+    this->room = &room;
     this->date = QDate::currentDate();
 }
 
@@ -15,7 +15,7 @@ QList<Customer> Reservation::getCustomer()
 
 Room Reservation::getRoom()
 {
-    return room;
+    return *room;
 }
 
 QDate Reservation::getDate()

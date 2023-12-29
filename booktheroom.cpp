@@ -6,8 +6,7 @@ BookTheRoom::BookTheRoom(QWidget *parent) :
     ui(new Ui::BookTheRoom)
 {
     ui->setupUi(this);
-    const QList<QString> customers = {"Uğur ÖZKAN","Hellin Özyurt","Simge Kaplan","Kerem Batu","Emirhan Aslankarayiğit"};
-    ui->comboBox_Customer->addItems(customers);
+    this->setFixedSize(550,350);
     const QList<QString> rooms = {"101","102","103","104","105","106","201","202","203","301","302"};
     ui->comboBox_Room->addItems(rooms);
 }

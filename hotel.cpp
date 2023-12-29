@@ -14,7 +14,7 @@ void Hotel::newEmployee(Employee employee)
     employees.append(employee);
 }
 
-void Hotel::hireEmployee(Employee employee)
+void Hotel::firingEmployee(Employee employee)
 {
     QList<Employee>::iterator iter = employees.begin();
     while(iter != employees.end()){

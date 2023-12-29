@@ -1,7 +1,6 @@
 #ifndef RESERVATION_H
 #define RESERVATION_H
 
-#include <string>
 #include <QDate>
 #include "Customer.h"
 #include "Room.h"
@@ -20,7 +19,7 @@ public:
 
 private:
     QList<Customer> customers;
-    Room room;
+    Room* room;
     QDate date;
 };
 

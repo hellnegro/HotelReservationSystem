@@ -6,7 +6,6 @@
 class Room
 {
 public:
-    Room();
     Room(QString,QString,float);
     QString getTitle();
     QString getType();

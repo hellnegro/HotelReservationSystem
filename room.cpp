@@ -1,12 +1,5 @@
 #include "room.h"
 
-Room::Room()
-{
-    title = "SELECT ROOM";
-    type = "ROOM TYPE";
-    price = 0.0;
-}
-
 Room::Room(QString title, QString type, float price)
 {
     this->title = title;

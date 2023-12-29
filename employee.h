@@ -1,8 +1,6 @@
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
 
-#include <QString>
-#include <QDebug>
 #include "Human.h"
 
 class Employee : public Human

@@ -30,7 +30,6 @@ QString Customer::getEmail() const
     return email;
 }
 
-
 void Customer::setPhoneNumber(QString phoneNumber)
 {
     this->phoneNumber = phoneNumber;
@@ -39,4 +38,9 @@ void Customer::setPhoneNumber(QString phoneNumber)
 void Customer::setEmail(QString email)
 {
     this->email = email;
+}
+
+QString Customer::getInfo()
+{
+    return "No"+ QString::number(customerNo) + " " + Customer::getFullName();
 }

@@ -1,93 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>BookTheRoom</class>
- <widget class="QDialog" name="BookTheRoom">
+ <class>AddService</class>
+ <widget class="QDialog" name="AddService">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>550</width>
-    <height>350</height>
+    <height>250</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>ROOM RESERVATION PROCESS</string>
+   <string>Dialog</string>
   </property>
-  <widget class="QComboBox" name="comboBox_Room">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>40</y>
-     <width>100</width>
-     <height>30</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_Cancel">
-   <property name="geometry">
-    <rect>
-     <x>290</x>
-     <y>300</y>
-     <width>150</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Times New Roman</family>
-     <pointsize>12</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>CANCEL</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>100</y>
-     <width>200</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Times New Roman</family>
-     <pointsize>12</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>SELECT THE CUSTOMER</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_CheckIn">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>300</y>
-     <width>150</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Times New Roman</family>
-     <pointsize>12</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>CHECK IN</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>40</y>
+     <x>30</x>
+     <y>30</y>
      <width>200</width>
      <height>30</height>
     </rect>
@@ -103,13 +33,83 @@
     <string>SELECT THE ROOM</string>
    </property>
   </widget>
-  <widget class="QListView" name="listView">
+  <widget class="QPushButton" name="pushButton_Cancel">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>130</y>
-     <width>531</width>
-     <height>151</height>
+     <x>300</x>
+     <y>200</y>
+     <width>150</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>12</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>CANCEL</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Add">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>200</y>
+     <width>150</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>12</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>ADD</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_Room">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>30</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>100</y>
+     <width>200</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>12</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>SELECT THE SERVICE</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_Service">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>100</y>
+     <width>250</width>
+     <height>30</height>
     </rect>
    </property>
   </widget>

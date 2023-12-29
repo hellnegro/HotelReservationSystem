@@ -2,6 +2,7 @@
 #define CUSTOMER_H
 
 #include "Human.h"
+
 class Customer : public Human
 {
 private:
@@ -17,6 +18,7 @@ public:
     QString getEmail() const;
     void setPhoneNumber(QString);
     void setEmail(QString);
+    QString getInfo();
 };
 
 #endif // CUSTOMER_H
