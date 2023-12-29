@@ -8,12 +8,13 @@
 class Reservation
 {
 public:
-    Reservation(QList<Customer>, Room&);
-    QList<Customer> getCustomer();
+    Reservation();
+    ~Reservation();
+    QList<Customer> getCustomers();
     Room getRoom();
     QDate getDate();
-    void addCustomers(Customer);
-    void removeCustomers(Customer);
+    void addCustomer(Customer);
+    void removeCustomer(Customer);
     void addRoom(Room);
     void setRoom(Room);
 

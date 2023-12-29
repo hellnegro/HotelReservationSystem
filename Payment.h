@@ -11,7 +11,6 @@ private:
     QString date;
 public:
     Payment(float,QString);
-    Payment();
     float getDebt();
     QString getMethod();
     QString getDate();

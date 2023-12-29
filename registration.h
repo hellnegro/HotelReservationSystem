@@ -2,9 +2,7 @@
 #define REGISTRATION_H
 
 #include <QDialog>
-#include "system.h"
-#include "Customer.h"
-#include "employee.h"
+#include "hotel.h"
 
 namespace Ui {
 class Registration;

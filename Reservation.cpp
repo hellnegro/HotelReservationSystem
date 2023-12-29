@@ -1,14 +1,16 @@
 #include "Reservation.h"
 
-Reservation::Reservation(QList<Customer> customers, Room& room)
+Reservation::Reservation()
 {
-    this->customers = customers;
-    this->room = &room;
     this->date = QDate::currentDate();
 }
 
+Reservation::~Reservation()
+{
+    delete room;
+}
 
-QList<Customer> Reservation::getCustomer()
+QList<Customer> Reservation::getCustomers()
 {
     return customers;
 }
@@ -23,12 +25,12 @@ QDate Reservation::getDate()
     return date;
 }
 
-void Reservation::addCustomers(Customer customer)
+void Reservation::addCustomer(Customer customer)
 {
     customers.append(customer);
 }
 
-void Reservation::removeCustomers(Customer customer)
+void Reservation::removeCustomer(Customer customer)
 {
     QList<Customer>::iterator iter = customers.begin();
     while(iter != customers.end()){

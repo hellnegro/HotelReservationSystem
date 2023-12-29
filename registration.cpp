@@ -16,6 +16,8 @@ Registration::Registration(QDialog *parent) :
 Registration::~Registration()
 {
     delete ui;
+    delete customer;
+    delete employee;
 }
 
 void Registration::on_pushButton_Cancel_clicked()
@@ -55,7 +57,7 @@ void Registration::on_pushButton_Submit_clicked()
         QString email = ui->lineEdit_email->text();
 
         customer = new Customer(customerNo,firstName,lastName,age,gender,phoneNumber,email);
-        System::getInstance()->addCustomers(*customer);
+        Hotel::getInstance()->getSystem().addCustomers(*customer);
         this->hide();
     }
 }
