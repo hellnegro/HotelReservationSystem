@@ -1,18 +1,5 @@
 #include "hotel.h"
 
-Hotel* Hotel::instance = nullptr;
-
-Hotel *Hotel::getInstance()
-{
-    if(instance == nullptr)
-        instance = new Hotel();
-    return instance;
-}
-
-System Hotel::getSystem()
-{
-    return *system;
-}
 
 QList<Employee> Hotel::getEmployees()
 {
@@ -72,9 +59,4 @@ void  Hotel::deleteService(Service service)
             services.erase(iter);
         iter++;
     }
-}
-
-Hotel::~Hotel()
-{
-    delete system;
 }

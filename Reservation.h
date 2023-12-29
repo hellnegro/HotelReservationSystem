@@ -8,8 +8,6 @@
 class Reservation
 {
 public:
-    Reservation();
-    ~Reservation();
     QList<Customer> getCustomers();
     Room getRoom();
     QDate getDate();
@@ -20,7 +18,7 @@ public:
 
 private:
     QList<Customer> customers;
-    Room* room;
+    Room room;
     QDate date;
 };
 

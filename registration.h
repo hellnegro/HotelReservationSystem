@@ -2,7 +2,6 @@
 #define REGISTRATION_H
 
 #include <QDialog>
-#include "hotel.h"
 
 namespace Ui {
 class Registration;
@@ -25,8 +24,6 @@ private slots:
 
 private:
     Ui::Registration *ui;
-    Customer *customer;
-    Employee *employee;
 };
 
 #endif // REGISTRATION_H

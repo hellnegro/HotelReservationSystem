@@ -24,8 +24,6 @@ int main(int argc, char *argv[])
                         {1,"WAKE UP",175.00},
                         {1,"DINNER",650.00}};
 
-    Hotel::getInstance()->setServices(services);
-    Hotel::getInstance()->setRooms(rooms);
     QApplication a(argc, argv);    
     MainWindow w;    
     w.show();

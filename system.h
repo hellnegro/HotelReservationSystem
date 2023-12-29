@@ -8,7 +8,6 @@
 class System
 {
 public:
-    System(){};
     void newReservation(Reservation reservation);
     void cancelReservation(Reservation reservation);
     void addService(Service service);

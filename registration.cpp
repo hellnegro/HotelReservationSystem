@@ -1,5 +1,6 @@
 #include "registration.h"
 #include "ui_registration.h"
+#include "Customer.h"
 
 Registration::Registration(QDialog *parent) :
     QDialog(parent),
@@ -16,8 +17,6 @@ Registration::Registration(QDialog *parent) :
 Registration::~Registration()
 {
     delete ui;
-    delete customer;
-    delete employee;
 }
 
 void Registration::on_pushButton_Cancel_clicked()
@@ -56,8 +55,8 @@ void Registration::on_pushButton_Submit_clicked()
         QString phoneNumber = ui->lineEdit_phone->text();
         QString email = ui->lineEdit_email->text();
 
-        customer = new Customer(customerNo,firstName,lastName,age,gender,phoneNumber,email);
-        Hotel::getInstance()->getSystem().addCustomers(*customer);
+        Customer customer = Customer(customerNo,firstName,lastName,age,gender,phoneNumber,email);
+
         this->hide();
     }
 }

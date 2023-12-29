@@ -1,14 +1,5 @@
 #include "Reservation.h"
 
-Reservation::Reservation()
-{
-    this->date = QDate::currentDate();
-}
-
-Reservation::~Reservation()
-{
-    delete room;
-}
 
 QList<Customer> Reservation::getCustomers()
 {
@@ -17,7 +8,7 @@ QList<Customer> Reservation::getCustomers()
 
 Room Reservation::getRoom()
 {
-    return *room;
+    return room;
 }
 
 QDate Reservation::getDate()
