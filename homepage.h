@@ -44,6 +44,7 @@ private:
     BookTheRoom *booking;
     Transactions *transactions;
     AddService *addservice;
+
 };
 
 #endif // HOMEPAGE_H

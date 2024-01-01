@@ -329,6 +329,36 @@
     <number>40</number>
    </property>
   </widget>
+  <widget class="QLabel" name="label_position">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>215</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>12</pointsize>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Position</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_position">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>215</y>
+     <width>200</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>lineEdit_name</tabstop>

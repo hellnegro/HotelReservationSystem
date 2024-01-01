@@ -6,14 +6,12 @@
 class Customer : public Human
 {
 private:
-    int customerNo;
     QString phoneNumber;
     QString email;
 
 public:
-    Customer(int, QString, QString, short, QString, QString, QString);
-    Customer(int, Human&, QString, QString);
-    int getCustomerNo() const;
+    Customer(QString, QString, short, QString, QString, QString);
+    Customer(Human&, QString, QString);
     QString getPhoneNumber() const;
     QString getEmail() const;
     void setPhoneNumber(QString);

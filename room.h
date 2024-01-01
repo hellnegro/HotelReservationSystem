@@ -14,7 +14,7 @@ public:
 
 private:
 
-    QString title;
+    QString roomNo;
     QString type;
     float price;
 };

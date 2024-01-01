@@ -1,24 +1,18 @@
 #include "Customer.h"
 
-Customer::Customer(int customerNo, QString firstName, QString lastName, short age, QString gender, QString phoneNumber, QString email)
+Customer::Customer(QString firstName, QString lastName, short age, QString gender, QString phoneNumber, QString email)
     : Human(firstName, lastName, age, gender)
 {
-    this->customerNo = customerNo;
     this->phoneNumber = phoneNumber;
     this->email = email;
 }
 
-Customer::Customer(int customerNo, Human& human, QString phoneNumber, QString email):Human(human)
+Customer::Customer(Human& human, QString phoneNumber, QString email):Human(human)
 {
-    this->customerNo = customerNo;
     this->phoneNumber = phoneNumber;
     this->email = email;
 }
 
-int Customer::getCustomerNo() const
-{
-    return customerNo;
-}
 
 QString Customer::getPhoneNumber() const
 {
@@ -42,5 +36,5 @@ void Customer::setEmail(QString email)
 
 QString Customer::getInfo()
 {
-    return "No"+ QString::number(customerNo) + " " + Customer::getFullName();
+    return  Customer::getFullName();
 }

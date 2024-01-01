@@ -41,13 +41,14 @@ void System::addCustomers(Customer customer)
 }
 
 void System::removeCustomer(Customer customer)
-{
+{/*
     QList<Customer>::iterator iter = customers.begin();
     while(iter != customers.end()){
         if((*iter).getCustomerNo() == customer.getCustomerNo())
             customers.erase(iter);
         iter++;
     }
+*/
 }
 
 void System::showDebt()

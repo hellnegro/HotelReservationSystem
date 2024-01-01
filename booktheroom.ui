@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>550</width>
-    <height>350</height>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,7 +27,7 @@
    <property name="geometry">
     <rect>
      <x>290</x>
-     <y>300</y>
+     <y>200</y>
      <width>150</width>
      <height>30</height>
     </rect>
@@ -60,14 +60,14 @@
     </font>
    </property>
    <property name="text">
-    <string>SELECT THE CUSTOMER</string>
+    <string>THE CUSTOMER INFO</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_CheckIn">
    <property name="geometry">
     <rect>
      <x>90</x>
-     <y>300</y>
+     <y>200</y>
      <width>150</width>
      <height>30</height>
     </rect>
@@ -103,13 +103,13 @@
     <string>SELECT THE ROOM</string>
    </property>
   </widget>
-  <widget class="QListView" name="listView">
+  <widget class="QTextBrowser" name="textBrowser">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>130</y>
-     <width>531</width>
-     <height>151</height>
+     <x>240</x>
+     <y>100</y>
+     <width>250</width>
+     <height>30</height>
     </rect>
    </property>
   </widget>
