@@ -17,6 +17,7 @@ public:
 
 private:
     Ui::Transactions *ui;
+    void readData();
 };
 
 #endif // TRANSACTIONS_H

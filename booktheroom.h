@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QDebug>
+#include <vector>
 
 namespace Ui {
 class BookTheRoom;
@@ -15,9 +16,13 @@ class BookTheRoom : public QDialog
 public:
     explicit BookTheRoom(QWidget *parent = nullptr);
     ~BookTheRoom();
+    void readData();
+
 
 private slots:
     void on_pushButton_Cancel_clicked();
+
+    void on_pushButton_CheckIn_clicked();
 
 private:
     Ui::BookTheRoom *ui;

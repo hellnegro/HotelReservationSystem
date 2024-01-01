@@ -215,7 +215,7 @@ font: 24pt &quot;Times New Roman&quot;;</string>
     </layout>
    </widget>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="label_status">
    <property name="geometry">
     <rect>
      <x>30</x>

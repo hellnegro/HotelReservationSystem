@@ -11,7 +11,6 @@
 #include <vector>
 #include "Customer.h"
 #include "employee.h"
-#include "service.h"
 #include "room.h"
 
 class Hotel
@@ -19,27 +18,17 @@ class Hotel
 public:
     static Hotel* instance;
     static Hotel* getInstance();
-    void registerCustomer(Customer customer);
-    void registerEmployee(Employee employee);
+    void registerCustomer(Customer);
+    void registerEmployee(Employee);
     std::vector<int> getRoomList(QString);
-    QList<Employee> getEmployees();
-    QList<Service> getServices();
-    QList<Room> getRooms();
-    void setEmployees(QList<Employee>);
-    void setServices(QList<Service>);
-    void setRooms(QList<Room>);
-    void newEmployee(Employee);
-    void firingEmployee(Employee);
-    void newService(Service);
-    void deleteService(Service);
-
+    std::vector<QString> getCustomerList(QString);
+    int bookRoom(int,QString);
 
 private:
     Hotel(){};
     Hotel(Hotel const &){};
-    QList<Employee> employees;
-    QList<Service> services;
-    QList<Room> rooms;
+    std::vector<int> rooms;
+    std::vector<int> customers;
 };
 
 #endif // HOTEL_H

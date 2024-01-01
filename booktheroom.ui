@@ -103,7 +103,7 @@
     <string>SELECT THE ROOM</string>
    </property>
   </widget>
-  <widget class="QTextBrowser" name="textBrowser">
+  <widget class="QComboBox" name="comboBox_customer">
    <property name="geometry">
     <rect>
      <x>240</x>

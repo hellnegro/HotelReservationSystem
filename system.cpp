@@ -9,7 +9,7 @@ void System::cancelReservation(Reservation reservation)
 {
     QList<Reservation>::iterator iter = reservations.begin();
     while(iter != reservations.end()){
-        if((*iter).getRoom().getTitle() == reservation.getRoom().getTitle())
+        if((*iter).getRoom().getRoomNo() == reservation.getRoom().getRoomNo())
             reservations.erase(iter);
         iter++;
     }

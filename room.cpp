@@ -1,13 +1,13 @@
 #include "room.h"
 
-Room::Room(QString roomNo, QString type, float price)
+Room::Room(int roomNo, QString type, float price)
 {
     this->roomNo = roomNo;
     this->type = type;
     this->price = price;
 }
 
-QString Room::getTitle()
+int Room::getRoomNo()
 {
     return roomNo;
 }
