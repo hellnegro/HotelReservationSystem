@@ -40,6 +40,7 @@ void HomePage::on_pushButton_CheckOut_clicked()
 void HomePage::on_pushButton_clicked()
 {
     available = new Availability(this);
+    available->readData();
     available->show();
 }
 
@@ -47,6 +48,7 @@ void HomePage::on_pushButton_clicked()
 void HomePage::on_pushButton_BookRoom_clicked()
 {
     booking = new BookTheRoom(this);
+    booking->readData();
     booking->show();
 }
 

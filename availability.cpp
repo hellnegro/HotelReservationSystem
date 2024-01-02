@@ -24,7 +24,7 @@ void Availability::readData()
         //Put logic to change color of Labels
         QString labelName = "label_" + QString::number(*it);
         QLabel *ptr = this->findChild<QLabel*>(labelName);
-        ptr->setStyleSheet("QLabel { background-color: red; }");
+        ptr->setStyleSheet("QLabel { background-color: rgb(255, 0, 0); }");
     }
 
     for(std::vector<int>::iterator it = rooms.begin(); it!=rooms.end(); it++ )
@@ -32,7 +32,7 @@ void Availability::readData()
         //Put logic to change color of Labels
         QString labelName = "label_" + QString::number(*it);
         QLabel *ptr = this->findChild<QLabel*>(labelName);
-        ptr->setStyleSheet("QLabel { background-color: green; }");
+        ptr->setStyleSheet("QLabel { background-color: rgb(0, 255, 0); }");
     }
 }
 

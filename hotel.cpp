@@ -9,7 +9,7 @@ Hotel *Hotel::getInstance()
     return instance;
 }
 
-void Hotel::registerCustomer(Customer customer)
+int Hotel::registerCustomer(Customer customer)
 {
     QSqlDatabase Database = QSqlDatabase::addDatabase("QSQLITE");
     Database.setDatabaseName(QString::fromStdString("C:/Users/bilgi/Documents/GitHub/HotelReservationSystem/database/hotel.db"));
@@ -25,14 +25,15 @@ void Hotel::registerCustomer(Customer customer)
 
     QSqlQuery query(Database);
 
-    query.prepare("INSERT INTO customer (name, surname, age, gender, phone, email) "
-                  "VALUES (:name, :surname, :age, :gender, :phone, :email)");
+    query.prepare("INSERT INTO customer (name, surname, age, gender, phone, email,isBook) "
+                  "VALUES (:name, :surname, :age, :gender, :phone, :email, :isBook)");
     query.bindValue(":name", customer.getName());
     query.bindValue(":surname", customer.getSurname());
     query.bindValue(":age", customer.getAge());
     query.bindValue(":gender", customer.getGender());
     query.bindValue(":phone", customer.getPhoneNumber());
     query.bindValue(":email", customer.getEmail());
+    query.bindValue(":isBook", "n");
 
     QString customer_id;
     if(!query.exec())
@@ -45,9 +46,10 @@ void Hotel::registerCustomer(Customer customer)
     }
     query.clear();
     Database.close();
+    return customer_id.toInt();
 }
 
-void Hotel::registerEmployee(Employee employee)
+int Hotel::registerEmployee(Employee employee)
 {
     QSqlDatabase Database = QSqlDatabase::addDatabase("QSQLITE");
     Database.setDatabaseName("C:/Users/bilgi/Documents/GitHub/HotelReservationSystem/database/hotel.db");
@@ -82,6 +84,7 @@ void Hotel::registerEmployee(Employee employee)
     }
     query.clear();
     Database.close();
+    return employee_id.toInt();
 }
 
 std::vector<int> Hotel::getRoomList(QString flag = "y")
@@ -119,9 +122,9 @@ std::vector<int> Hotel::getRoomList(QString flag = "y")
     return rooms;
 }
 
-std::vector<QString> Hotel::getCustomerList(QString flag = "n")
+std::vector<std::vector<QString>> Hotel::getCustomerList(QString flag = "n")
 {
-    std::vector<QString> customers;
+    std::vector<std::vector<QString>> customers;
     QSqlDatabase Database = QSqlDatabase::addDatabase("QSQLITE");
     Database.setDatabaseName("C:/Users/bilgi/Documents/GitHub/HotelReservationSystem/database/hotel.db");
     if(QFile::exists(QString::fromStdString("C:/Users/bilgi/Documents/GitHub/HotelReservationSystem/database/hotel.db")))
@@ -135,7 +138,7 @@ std::vector<QString> Hotel::getCustomerList(QString flag = "n")
         qDebug() << "Database loaded successfull!";
 
     QSqlQuery query(Database);
-    query.prepare("SELECT name, surname FROM customer WHERE isBook = '" + flag + "'");
+    query.prepare("SELECT id, name, surname FROM customer WHERE isBook = '" + flag + "'");
 
     if(!query.exec())
         qDebug() << query.lastError().text() << query.lastQuery();
@@ -144,19 +147,22 @@ std::vector<QString> Hotel::getCustomerList(QString flag = "n")
     int i=0;
     while(query.next())
     {
-        QString name = query.value(i).toString();
-        QString surname = query.value(++i).toString();
-        QString fullName = name.append(" ").append(surname);
-        customers.push_back(fullName);
-
-        qDebug()<<"Line is : "<< fullName;
+        std::vector<QString> customer;
+        QString id = query.value(0).toString();
+        QString name = query.value(1).toString();
+        QString surname = query.value(2).toString();
+        customer.push_back(id);
+        customer.push_back(name);
+        customer.push_back(surname);
+        customers.push_back(customer);
+        qDebug()<<"Line is : "<< id;
     }
     query.clear();
     Database.close();
     return customers;
 }
 
-int Hotel::bookRoom(int roomNo, QString customer)
+int Hotel::bookRoom(int roomNo, int customerNo)
 {
     QSqlDatabase Database = QSqlDatabase::addDatabase("QSQLITE");
     Database.setDatabaseName("C:/Users/bilgi/Documents/GitHub/HotelReservationSystem/database/hotel.db");
@@ -171,46 +177,39 @@ int Hotel::bookRoom(int roomNo, QString customer)
         qDebug() << "Database loaded successfull!";
 
     QSqlQuery query(Database);
-    query.prepare("UPDATE room SET available ='n' WHERE roomNo ='" +QString::number(roomNo)+ "'");
-    if(!query.exec())
-        qDebug() << query.lastError().text() << query.lastQuery();
-    else
-        qDebug() << "Update was successful "<< query.lastQuery();
-
-    query.clear();
 
     //prepare room query
-    query.prepare("SELECT * FROM room WHERE roomNo = '" + QString::number(roomNo) + "'");
+    query.prepare("UPDATE room SET available ='n' WHERE roomNo ='" + QString::number(roomNo) + "'");
     if(!query.exec())
         qDebug() << query.lastError().text() << query.lastQuery();
     else
-        qDebug() << "Fetch was successful";
-    int room_id = query.lastQuery().toInt();
+        qDebug() << "Update was successful "<< query.lastQuery();
+
     query.clear();
 
-
-    //prepare customer query    
-    QString name = customer.split("\t").at(0);
-    QString surname = customer.split("\t").at(1);
-    query.prepare("SELECT * FROM customer WHERE name = '" + name + "," + surname + "'");
-    if(!query.exec())
-        qDebug() << query.lastError().text() << query.lastQuery();
-    else
-        qDebug() << "Fetch was successful";
-    int cusmoter_id = query.lastQuery().toInt();
-    query.clear();
-
-    query.prepare("UPDATE customer SET isBook ='y' where id ='" +QString::number(cusmoter_id)+ "'");
+    //prepare customer query
+    query.prepare("UPDATE customer SET isBook ='y' where id ='" + QString::number(customerNo)+ "'");
     if(!query.exec())
         qDebug() << query.lastError().text() << query.lastQuery();
     else
         qDebug() << "Update was successful "<< query.lastQuery();
     query.clear();
 
+    query.prepare("SELECT name, surname FROM customer WHERE id = '" + QString::number(customerNo) + "'");
 
-    query.prepare("INSERT INTO transaction (room, customer) VALUES (:room, :customer)");
-    query.bindValue(":room", room_id);
-    query.bindValue(":customer", cusmoter_id);
+    if(!query.exec())
+        qDebug() << query.lastError().text() << query.lastQuery();
+    else
+        qDebug() << "Fetch was successful";
+    QString name = query.value(0).toString();
+    QString surname = query.value(1).toString();
+
+    query.clear();
+    //prepare transaction query
+    query.prepare("INSERT INTO transaction (room, customerName, customerSurname) VALUES (:room, :customerName, :customerSurname)");
+    query.bindValue(":room", roomNo);
+    query.bindValue(":customerName", name);
+    query.bindValue(":customerSurname", surname);
 
     QString transactionId;
     if(!query.exec())

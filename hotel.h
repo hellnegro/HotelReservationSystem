@@ -18,11 +18,11 @@ class Hotel
 public:
     static Hotel* instance;
     static Hotel* getInstance();
-    void registerCustomer(Customer);
-    void registerEmployee(Employee);
+    int registerCustomer(Customer);
+    int registerEmployee(Employee);
     std::vector<int> getRoomList(QString);
-    std::vector<QString> getCustomerList(QString);
-    int bookRoom(int,QString);
+    std::vector<std::vector<QString>> getCustomerList(QString);
+    int bookRoom(int,int);
 
 private:
     Hotel(){};

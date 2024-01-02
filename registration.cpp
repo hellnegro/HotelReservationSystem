@@ -59,7 +59,8 @@ void Registration::on_pushButton_Submit_clicked()
         QString email = ui->lineEdit_email->text();
 
         Customer customer = Customer(firstName,lastName,age,gender,phoneNumber,email);
-        Hotel::getInstance()->registerCustomer(customer);
+        int customerNo = Hotel::getInstance()->registerCustomer(customer);
+        customer.setCustomerNo(customerNo);
         this->hide();
     }else{
         QString firstName = ui->lineEdit_name->text();
@@ -69,7 +70,8 @@ void Registration::on_pushButton_Submit_clicked()
         QString position = ui->lineEdit_position->text();
 
         Employee employee = Employee(firstName,lastName,age,gender,position);
-        Hotel::getInstance()->registerEmployee(employee);
+        int employeeNo = Hotel::getInstance()->registerEmployee(employee);
+        employee.setEmployeeNo(employeeNo);
         this->hide();
     }
 }

@@ -17,7 +17,10 @@ public:
     explicit BookTheRoom(QWidget *parent = nullptr);
     ~BookTheRoom();
     void readData();
-
+    int getRoomNo();
+    int getCustomerNo();
+    void setRoomNo(int);
+    void setCustomerNo(int);
 
 private slots:
     void on_pushButton_Cancel_clicked();
@@ -26,6 +29,8 @@ private slots:
 
 private:
     Ui::BookTheRoom *ui;
+    int roomNo;
+    int customerNo;
 };
 
 #endif // BOOKTHEROOM_H

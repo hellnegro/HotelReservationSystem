@@ -6,11 +6,14 @@
 class Employee : public Human
 {
 private:
+    int employeeNo;
     QString position;
 
 public:
     Employee(QString, QString, short, QString, QString);
     Employee(Human&, QString);
+    int getEmployeeNo();
+    void setEmployeeNo(int);
     QString getPosition();
     void setPosition(QString);
     QString getInfo();
