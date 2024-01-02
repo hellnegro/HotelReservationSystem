@@ -9,7 +9,7 @@ void System::cancelReservation(Reservation reservation)
 {
     QList<Reservation>::iterator iter = reservations.begin();
     while(iter != reservations.end()){
-        if((*iter).getRoom().getTitle() == reservation.getRoom().getTitle())
+        if((*iter).getRoom().getRoomNo() == reservation.getRoom().getRoomNo())
             reservations.erase(iter);
         iter++;
     }
@@ -41,13 +41,14 @@ void System::addCustomers(Customer customer)
 }
 
 void System::removeCustomer(Customer customer)
-{
+{/*
     QList<Customer>::iterator iter = customers.begin();
     while(iter != customers.end()){
         if((*iter).getCustomerNo() == customer.getCustomerNo())
             customers.erase(iter);
         iter++;
     }
+*/
 }
 
 void System::showDebt()

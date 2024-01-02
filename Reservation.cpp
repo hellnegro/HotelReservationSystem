@@ -22,12 +22,13 @@ void Reservation::addCustomer(Customer customer)
 }
 
 void Reservation::removeCustomer(Customer customer)
-{
+{/*
     QList<Customer>::iterator iter = customers.begin();
     while(iter != customers.end()){
         if((*iter).getCustomerNo() == customer.getCustomerNo())
             customers.erase(iter);
         iter++;
     }
+*/
 }
 

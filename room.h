@@ -6,15 +6,15 @@
 class Room
 {
 public:
-    Room(QString,QString,float);
-    QString getTitle();
+    Room(int,QString,float);
+    int getRoomNo();
     QString getType();
     float getPrice();
     void setPrice(float);
 
 private:
 
-    QString title;
+    int roomNo;
     QString type;
     float price;
 };

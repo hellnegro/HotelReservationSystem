@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QDebug>
 
+
 namespace Ui {
 class Availability;
 }
@@ -15,6 +16,7 @@ class Availability : public QDialog
 public:
     explicit Availability(QWidget *parent = nullptr);
     ~Availability();
+    void readData();
 
 private:
     Ui::Availability *ui;

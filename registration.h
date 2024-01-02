@@ -2,6 +2,7 @@
 #define REGISTRATION_H
 
 #include <QDialog>
+#include "hotel.h"
 
 namespace Ui {
 class Registration;

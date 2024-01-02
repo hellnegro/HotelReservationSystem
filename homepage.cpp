@@ -23,6 +23,7 @@ HomePage::~HomePage()
     delete booking;
 }
 
+
 void HomePage::on_pushButton_RegisterClient_clicked()
 {
     registeration = new Registration(this);
