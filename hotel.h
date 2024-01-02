@@ -23,6 +23,7 @@ public:
     std::vector<int> getRoomList(QString);
     std::vector<std::vector<QString>> getCustomerList(QString);
     int bookRoom(int,int);
+    int checkOut(int roomNo);
 
 private:
     Hotel(){};

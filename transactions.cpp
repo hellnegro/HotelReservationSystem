@@ -8,7 +8,6 @@ Transactions::Transactions(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(565,530);
-    readData();
 }
 
 void Transactions:: readData()
@@ -26,7 +25,7 @@ void Transactions:: readData()
         qDebug() << "Database loaded successfull!";
 
     QSqlQuery query(Database);
-    query.prepare("select * from cppbuzz_transaction");
+    query.prepare("SELECT * FROM transaction");
 
     if(!query.exec())
         qDebug() << query.lastError().text() << query.lastQuery();
@@ -36,9 +35,13 @@ void Transactions:: readData()
 
     while(query.next())
     {
-
-        this->ui->listWidget->addItem(query.value(0).toString() +"************************"+ query.value(1).toString() +"****************"+ query.value(2).toString());
-        qDebug() << query.value(0).toString() << " " << query.value(1).toString() << query.value(2).toString();
+        QString room = query.value(0).toString();
+        QString customerName = query.value(1).toString();
+        QString customerSurname = query.value(2).toString();
+        QString tab = " ";
+        QString item = room.append(tab).append(customerName).append(tab).append(customerSurname);
+        this->ui->listWidget->addItem(item);
+        qDebug() << item;
     }
 
     Database.close();

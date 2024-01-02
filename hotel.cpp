@@ -144,7 +144,7 @@ std::vector<std::vector<QString>> Hotel::getCustomerList(QString flag = "n")
         qDebug() << query.lastError().text() << query.lastQuery();
     else
         qDebug() << "Fetch was successful";
-    int i=0;
+
     while(query.next())
     {
         std::vector<QString> customer;
@@ -184,7 +184,6 @@ int Hotel::bookRoom(int roomNo, int customerNo)
         qDebug() << query.lastError().text() << query.lastQuery();
     else
         qDebug() << "Update was successful "<< query.lastQuery();
-
     query.clear();
 
     //prepare customer query
@@ -196,20 +195,27 @@ int Hotel::bookRoom(int roomNo, int customerNo)
     query.clear();
 
     query.prepare("SELECT name, surname FROM customer WHERE id = '" + QString::number(customerNo) + "'");
-
     if(!query.exec())
         qDebug() << query.lastError().text() << query.lastQuery();
     else
         qDebug() << "Fetch was successful";
-    QString name = query.value(0).toString();
-    QString surname = query.value(1).toString();
-
+    QString name,surname;
+    while(query.next())
+    {
+        name = query.value(0).toString();
+        surname = query.value(1).toString();
+    }
+    qDebug() << name << surname;
     query.clear();
+
     //prepare transaction query
-    query.prepare("INSERT INTO transaction (room, customerName, customerSurname) VALUES (:room, :customerName, :customerSurname)");
+    query.prepare("INSERT INTO transaction (room, customerName, customerSurname, service, payment)"
+                  "VALUES (:room, :customerName, :customerSurname, :service, :payment)");
     query.bindValue(":room", roomNo);
     query.bindValue(":customerName", name);
     query.bindValue(":customerSurname", surname);
+    query.bindValue(":service", "0");
+    query.bindValue(":payment", "0");
 
     QString transactionId;
     if(!query.exec())
@@ -221,6 +227,35 @@ int Hotel::bookRoom(int roomNo, int customerNo)
         qDebug() <<"Last Inserted Id is  : "<< transactionId;
     }
     query.clear();
+    Database.close();
+    return 0;
+}
+
+int Hotel::checkOut(int roomNo)
+{
+    qDebug()<<"in CheckOut for room no : " << roomNo;
+    //**** update DB **********
+
+    QSqlDatabase Database = QSqlDatabase::addDatabase("QSQLITE");
+    Database.setDatabaseName("C:/Users/bilgi/Documents/GitHub/HotelReservationSystem/database/hotel.db");
+    if(QFile::exists(QString::fromStdString("C:/Users/bilgi/Documents/GitHub/HotelReservationSystem/database/hotel.db")))
+        qDebug() << "DB file exist";
+    else
+        qDebug() << "DB file doesn't exists";
+
+    if (!Database.open())
+        qDebug() << Database.lastError().text();
+    else
+        qDebug() << "Database loaded successfull!";
+
+    QSqlQuery query(Database);
+    query.prepare("UPDATE room SET available ='y' WHERE roomNo ='" + QString::number(roomNo) + "'");
+    if(!query.exec())
+        qDebug() << query.lastError().text() << query.lastQuery();
+    else
+        qDebug() << "Update was successful "<< query.lastQuery();
+    query.clear();
+
     Database.close();
     return 0;
 }

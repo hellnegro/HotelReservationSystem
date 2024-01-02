@@ -14,10 +14,10 @@ class Transactions : public QDialog
 public:
     explicit Transactions(QWidget *parent = nullptr);
     ~Transactions();
+    void readData();
 
 private:
-    Ui::Transactions *ui;
-    void readData();
+    Ui::Transactions *ui;    
 };
 
 #endif // TRANSACTIONS_H

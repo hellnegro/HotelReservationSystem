@@ -33,6 +33,7 @@ void HomePage::on_pushButton_RegisterClient_clicked()
 void HomePage::on_pushButton_CheckOut_clicked()
 {
     paymentpage = new PaymentPage(this);
+    paymentpage->readData();
     paymentpage->show();
 }
 
@@ -56,6 +57,7 @@ void HomePage::on_pushButton_BookRoom_clicked()
 void HomePage::on_pushButton_transactions_clicked()
 {
     transactions = new Transactions(this);
+    transactions->readData();
     transactions->show();
 }
 
