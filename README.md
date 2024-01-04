@@ -1,7 +1,7 @@
 # HotelReservationSystem
 The automation system we created for our CENG201 course
 
-## <span style="color:blue">Setup</span>
+## <span style="color:blue"> Setup </span>
 
 1. First you need to download the Qt interface development tool.
 
