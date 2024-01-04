@@ -12,3 +12,11 @@ The automation system we created for our CENG201 course
 1. First of all, a login page welcomes you in our project. Here we aim to provide a secure login to the system with username and password.
 2. Username: test
 3. Password: 123
+
+## Contributors
+
+->Uğur ÖZKAN
+->Simge KAPLAN
+->Kerem BATU
+->Hellin ÖZYURT
+-
