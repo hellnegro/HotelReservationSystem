@@ -19,4 +19,4 @@ The automation system we created for our CENG201 course
 ->Simge KAPLAN
 ->Kerem BATU
 ->Hellin ÖZYURT
--
+->Emirhan ASLANKARAYİĞİT
