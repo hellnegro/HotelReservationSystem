@@ -1,6 +1,8 @@
 # HotelReservationSystem
 The automation system we created for our CENG201 course
 
+This project is designed to learn the basics of OOP. The purpose of this project is to register the customers to the hotel, while doing this, it checks the availability of the rooms in the hotel and carries out the transactions accordingly. In addition, it also handles the customer's checkout and payment method. One of the additional features is that customers can add special services (such as wake up, breakfast service)
+
 ## Setup 
 
 1. First you need to download the Qt interface development tool.
@@ -15,16 +17,16 @@ The automation system we created for our CENG201 course
 
 ## Contributors
 
-->Uğur ÖZKAN
+->Uğur ÖZKAN 21050161003
 
 
-->Simge KAPLAN
+->Simge KAPLAN 20050111075
 
 
-->Kerem BATU  
+->Kerem BATU 20050111061
 
 
-->Hellin ÖZYURT
+->Hellin ÖZYURT 20050111033
 
 
-->Emirhan ASLANKARAYİĞİT
+->Emirhan ASLANKARAYİĞİT 20050111059
