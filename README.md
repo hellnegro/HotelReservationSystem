@@ -15,8 +15,16 @@ The automation system we created for our CENG201 course
 
 ## Contributors
 
-->Uğur ÖZKAN/n
+->Uğur ÖZKAN
+
+
 ->Simge KAPLAN
-->Kerem BATU
+
+
+->Kerem BATU  
+
+
 ->Hellin ÖZYURT
+
+
 ->Emirhan ASLANKARAYİĞİT
