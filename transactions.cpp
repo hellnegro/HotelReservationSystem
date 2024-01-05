@@ -1,6 +1,24 @@
+/**
+ * @class Transactions
+ * @brief Manages and displays transaction information within the hotel management system.
+ *
+ * The Transactions class is responsible for retrieving and displaying transaction data
+ * from the system's database. It provides functionality to read and present transaction details.
+ *
+ * @note This class is part of the hotel management system, contributing to the overall functionality
+ * by handling transaction-related tasks.
+ */
+
+
 #include "transactions.h"
 #include "ui_transactions.h"
 #include "hotel.h"
+
+/**
+ * @brief Constructs a Transactions object.
+ * @param parent The parent widget.
+ */
+
 
 Transactions::Transactions(QWidget *parent) :
     QDialog(parent),
@@ -9,6 +27,10 @@ Transactions::Transactions(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(565,530);
 }
+
+/**
+ * @brief Reads transaction data from the system's database and populates the user interface.
+ */
 
 void Transactions:: readData()
 {
@@ -47,6 +69,9 @@ void Transactions:: readData()
     Database.close();
 }
 
+/**
+ * @brief Destroys the Transactions object.
+ */
 
 Transactions::~Transactions()
 {

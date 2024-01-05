@@ -1,7 +1,26 @@
+/**
+ * @class LoginPage
+ * @brief Implementation of the LoginPage class methods.
+ *
+ * The LoginPage class provides a simple interface for user authentication.
+ * It includes a username and password input field, along with an icon for visual
+ * representation. Upon successful login, it opens the main home page of the system.
+ *
+ * @note This class is responsible for handling user login interactions.
+ */
+
+
+
 #include "loginpage.h"
 #include "ui_loginpage.h"
 #include <QMessageBox>
 #include <QPixmap>
+
+
+/**
+ * @brief Constructor for the LoginPage class.
+ * @param parent The parent widget -default is nullptr-
+ */
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -17,10 +36,21 @@ MainWindow::MainWindow(QWidget *parent)
 
 }
 
+/**
+ * @brief Destructor for the LoginPage class.
+ */
+
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+
+/**
+ * @brief Slot function for the login button click event.
+ * @details Checks the entered username and password, and opens the home page on success.
+ * Otherwise, displays a warning message.
+ */
 
 void MainWindow::on_pushButton_clicked()
 {

@@ -1,7 +1,24 @@
+/**
+ * @class Registration
+ * @brief Manages the registration process for adding new customers or employees.
+ *
+ * The Registration class provides an interface for users to register as customers or employees.
+ * Users can input their personal information, and based on the selected status, the system
+ * registers them as customers or employees.
+ *
+ * @note This class oversees the registration procedures in the hotel management system.
+ */
+
+
 #include "registration.h"
 #include "ui_registration.h"
 #include "Customer.h"
 #include "employee.h"
+
+/**
+ * @brief Constructor for the Registration class.
+ * @param parent The parent widget (default is nullptr).
+ */
 
 Registration::Registration(QDialog *parent) :
     QDialog(parent),
@@ -15,16 +32,32 @@ Registration::Registration(QDialog *parent) :
     ui->comboBox_status->addItem(QIcon(":/resource/icon/employee.png"),"EMPLOYEE");
 }
 
+/**
+ * @brief Destructor for the Registration class.
+ */
+
 Registration::~Registration()
 {
     delete ui;
 }
+
+
+/**
+ * @brief Slot function for the cancel button click event.
+ * @details Closes the registration page dialog without performing any actions.
+ */
 
 void Registration::on_pushButton_Cancel_clicked()
 {
     this->hide();    
 }
 
+
+/**
+ * @brief Slot function for the status combo box index change event.
+ * @details Shows or hides relevant input fields based on the selected status (customer or employee).
+ * If employee is selected, position-related fields are displayed; otherwise, phone and email fields are shown.
+ */
 
 void Registration::on_comboBox_status_currentIndexChanged(int index)
 {
@@ -46,6 +79,11 @@ void Registration::on_comboBox_status_currentIndexChanged(int index)
     }
 }
 
+/**
+ * @brief Slot function for the submit button click event.
+ * @details Processes the registration based on the selected status. Registers customers or employees
+ * in the hotel management system and hides the registration page upon successful registration.
+ */
 
 void Registration::on_pushButton_Submit_clicked()
 {

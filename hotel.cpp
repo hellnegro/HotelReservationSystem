@@ -1,6 +1,37 @@
+/**
+ * @class Hotel
+ * @brief Represents the central entity managing hotel operations in the system.
+ *
+ * The Hotel class provides singleton access to hotel-related functionalities such as
+ * customer and employee registration, room booking, check-out, and data retrieval.
+ * It utilizes a SQLite database for data storage and retrieval.
+ *
+ * The class includes methods for registering customers and employees, retrieving lists of
+ * available rooms and customer information, booking and checking out rooms, and managing
+ * transactions within the hotel system.
+ *
+ * @note This class is a key component of the hotel management system, handling various
+ * interactions and transactions within the application.
+ */
+
+
+
 #include "hotel.h"
 
+
+
+/**
+ * @brief Static instance of the Hotel class.
+ */
+
+
 Hotel* Hotel::instance = nullptr;
+
+
+/**
+ * @brief Gets the singleton instance of the Hotel class.
+ * @return The singleton instance of the Hotel class.
+ */
 
 Hotel *Hotel::getInstance()
 {
@@ -8,6 +39,12 @@ Hotel *Hotel::getInstance()
         instance = new Hotel();
     return instance;
 }
+
+/**
+ * @brief Registers a new customer in the system.
+ * @param customer The customer object to be registered.
+ * @return The ID of the registered customer.
+ */
 
 int Hotel::registerCustomer(Customer customer)
 {
@@ -48,6 +85,11 @@ int Hotel::registerCustomer(Customer customer)
     Database.close();
     return customer_id.toInt();
 }
+/**
+ * @brief Registers a new employee in the system.
+ * @param employee The employee object to be registered.
+ * @return The ID of the registered employee.
+ */
 
 int Hotel::registerEmployee(Employee employee)
 {
@@ -87,6 +129,13 @@ int Hotel::registerEmployee(Employee employee)
     return employee_id.toInt();
 }
 
+/**
+ * @brief Retrieves a list of available room numbers.
+ * @param flag Filter flag for room availability ('y' for available, 'n' for booked).
+ * @return A vector containing the available room numbers.
+ */
+
+
 std::vector<int> Hotel::getRoomList(QString flag = "y")
 {
     std::vector<int> rooms;
@@ -121,6 +170,13 @@ std::vector<int> Hotel::getRoomList(QString flag = "y")
     Database.close();
     return rooms;
 }
+
+/**
+ * @brief Retrieves a list of customer information based on booking status.
+ * @param flag Filter flag for customer booking status ('y' for booked, 'n' for not booked).
+ * @return A vector containing vectors of customer information (ID, name, surname).
+ */
+
 
 std::vector<std::vector<QString>> Hotel::getCustomerList(QString flag = "n")
 {
@@ -161,6 +217,14 @@ std::vector<std::vector<QString>> Hotel::getCustomerList(QString flag = "n")
     Database.close();
     return customers;
 }
+
+/**
+ * @brief Books a room for a customer, updating the database and creating a transaction.
+ * @param roomNo The room number to be booked.
+ * @param customerNo The customer ID for whom the room is booked.
+ * @return The ID of the created transaction.
+ */
+
 
 int Hotel::bookRoom(int roomNo, int customerNo)
 {
@@ -230,6 +294,13 @@ int Hotel::bookRoom(int roomNo, int customerNo)
     Database.close();
     return 0;
 }
+
+/**
+ * @brief Checks out a customer, updating the room availability status in the database.
+ * @param roomNo The room number to be checked out.
+ * @return An integer indicating the success of the check-out operation.
+ */
+
 
 int Hotel::checkOut(int roomNo)
 {
