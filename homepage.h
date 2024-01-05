@@ -1,6 +1,7 @@
 #ifndef HOMEPAGE_H
 #define HOMEPAGE_H
 
+#include <QApplication>
 #include <QDialog>
 #include <QDebug>
 
@@ -22,6 +23,11 @@ class HomePage : public QDialog
 public:
     explicit HomePage(QWidget *parent = nullptr);
     ~HomePage();
+
+protected:
+    void closeEvent(QCloseEvent *event) override {
+        QApplication::quit();
+    }
 
 private slots:
     void on_pushButton_RegisterClient_clicked();
